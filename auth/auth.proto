@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "github.com/mariajdab/auth-service/auth/auth";
+
+message Account {
+  string name = 1;
+  string username = 2;
+  string phoneNumber = 3;
+}
+
+message SignupWithPhoneNumberRequest {
+  Account account = 1;
+}
+
+message GenericResponse {
+  string statusCode = 1;
+}
+
+message Phone {
+  string number = 1; 
+}
+
+message OTP {
+  string code = 1;
+  string phoneNumber = 2;
+}
+
+message VerifyPhoneNumberRequest {
+  OTP otp = 1;
+}
+
+message Empty{
+
+}
+
+service AuthService {
+  rpc SignupWithPhoneNumber (SignupWithPhoneNumberRequest) returns (GenericResponse);
+  rpc VerifyPhoneNumber(VerifyPhoneNumberRequest) returns (GenericResponse);
+  rpc LoginWithPhoneNumber (Phone) returns (GenericResponse);
+  rpc ValidatePhoneNumberLogin (OTP) returns (GenericResponse);
+  rpc GetProfile(Empty) returns (GenericResponse);
+}
+
+service OTPService {
+  rpc CreateTwillioOTP (Phone) returns (GenericResponse);
+}
