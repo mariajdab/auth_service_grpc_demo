@@ -22,7 +22,7 @@ import (
 
 var (
 	port       = flag.Int("port", 50055, "The server port")
-	configFile = flag.String("conf", "C:\\Users\\egroj\\Code\\go\\src\\github.com\\mariajdab\\auth-service\\config.json", "configuration file")
+	configFile = flag.String("conf", "./config.json", "configuration file")
 	BaseAPIURL = "https://verify.twilio.com/v2/Services/"
 	users      = make(map[string]AccountInfo)
 )
