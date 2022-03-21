@@ -24,3 +24,4 @@ Improve proto file
 
 Add some tests
 
+Improve error handling
