@@ -5,6 +5,7 @@ gRPC services basic implementation
 ## Starting 🚀
 git clone https://github.com/mariajdab/auth_service_grpc_demo.git
 
+On config.json please add the credentials for Twilio API
 
 #### Open a new terminal window
 
