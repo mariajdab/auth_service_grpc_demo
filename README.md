@@ -13,7 +13,7 @@ go run auth_server/main.go
 
 #### Open another terminal windows 
 
-go run auth_client/main.go
+go run auth_client/main.go (you need to pass name, username and phone number)
 
 ## Future improvements
 
